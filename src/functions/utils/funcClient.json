@@ -1,0 +1,432 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address payable",
+        "name": "funcRegAddress_",
+        "type": "address"
+      },
+      {
+        "internalType": "address payable",
+        "name": "paymasterAddress_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "functionsConsumerAddress_",
+        "type": "address"
+      },
+      {
+        "internalType": "address payable",
+        "name": "adminAddress_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "requestFeeRate_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "subscriptionId_",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint32",
+        "name": "gasLimit_",
+        "type": "uint32"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "functionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "requestId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "FuncRequest",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "requestId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "returnData",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bool",
+        "name": "status",
+        "type": "bool"
+      },
+      {
+        "internalType": "bytes",
+        "name": "err",
+        "type": "bytes"
+      }
+    ],
+    "name": "fuffilRequest",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "functionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getLatestRequest",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "requestId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "functionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string[]",
+            "name": "args",
+            "type": "string[]"
+          },
+          {
+            "internalType": "bytes",
+            "name": "returnData",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "err",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bool",
+            "name": "status",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "time",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FuncClient.Request",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "functionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getRequests",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "requestId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "functionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string[]",
+            "name": "args",
+            "type": "string[]"
+          },
+          {
+            "internalType": "bytes",
+            "name": "returnData",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "err",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bool",
+            "name": "status",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "time",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FuncClient.Request[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "functionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "requestId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getReturnData",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "functionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "source",
+        "type": "string"
+      },
+      {
+        "internalType": "string[]",
+        "name": "args",
+        "type": "string[]"
+      },
+      {
+        "internalType": "bytes",
+        "name": "secrets",
+        "type": "bytes"
+      }
+    ],
+    "name": "makeRequest",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "name": "requestIdToFunctionId",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "requestList",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "requestId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "functionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "returnData",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "err",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bool",
+        "name": "status",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "time",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "name": "requestMap",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "requestId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "functionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "returnData",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "err",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bool",
+        "name": "status",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "time",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "requestFeeRate_",
+        "type": "uint256"
+      }
+    ],
+    "name": "updateFeeRate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "gasLimit_",
+        "type": "uint32"
+      }
+    ],
+    "name": "updateGasLimit",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "subscriptionId_",
+        "type": "uint64"
+      }
+    ],
+    "name": "updateSubscriptionId",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "withdrawEth",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "stateMutability": "payable",
+    "type": "receive"
+  }
+]

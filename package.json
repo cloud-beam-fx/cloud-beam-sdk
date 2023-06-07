@@ -1,0 +1,25 @@
+{
+  "name": "functions-kit",
+  "version": "1.0.0",
+  "description": "tool kit for using functions in daps",
+  "main": "dist/index.js",
+  "module": "dist/index.m.js",
+  "types": "dist/index.d.ts",
+  "unpkg": "dist/index.umd.js",
+  "scripts": {
+    "build": "rm -rf dist && microbundle --tsconfig tsconfig.json --no-source-maps"
+  },
+  "browserslist": [
+    "defaults and supports es6-module",
+    "maintained node versions"
+  ],
+  "author": "joshua Obigwe",
+  "license": "ISC",
+  "dependencies": {
+    "ethers": "^5.7.2"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.1",
+    "typescript": "^5.1.3"
+  }
+}
